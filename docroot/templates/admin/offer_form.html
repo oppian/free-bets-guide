@@ -1,0 +1,57 @@
+<span class="PageTitle">Offer</span><br>
+<FORM ACTION="<?=ME?>" METHOD="post">
+    <TABLE>
+        <TR CLASS="row<?=($rowcount++ % 2)?>">
+            <TH>Offer</TH>
+            <TD><INPUT type="text" size=20 name="OFFER" value="<?=o($FORM['OFFER'])?>"></TD>
+        </TR>
+        <TR CLASS="row<?=($rowcount++ % 2)?>">
+            <TH>Site</TH>
+            <TD>
+                <SELECT name="SITE_ID">
+                    <?=db_cgi_popupoption('sites', 'id', 'name', '', $FORM['SITE_ID'], 0)?>
+                </SELECT> 
+                <? if (!empty($FORM['IMAGE_URL'])) { ?>
+                    <IMG src="<?=o($FORM['IMAGE_URL'])?>" border=0>
+                <? } ?>
+            </TD>
+        </TR>
+        <TR CLASS="row<?=($rowcount++ % 2)?>">
+            <TH>Amount in GBP</TH>
+            <TD><INPUT type="text" name="AMT_GBP" size=5 value="<?=o($FORM['AMT_GBP'])?>"></TD>
+        </TR>
+        <TR CLASS="row<?=($rowcount++ % 2)?>">
+            <TH>Rating</TH>
+            <TD><INPUT type="text" name="RATING" size=5 value="<?=o($FORM['RATING'])?>"></TD>
+        </TR>
+        <TR CLASS="row<?=($rowcount++ % 2)?>">
+            <TH>Expiry<BR></TH>
+            <TD><INPUT type="text" name="EXPIRY" size=20 value="<?=o($FORM['EXPIRY'])?>"> (YYYY-MM-DD HH:MM:SS)</TD>
+        </TR>
+        <TR CLASS="row<?=($rowcount++ % 2)?>">
+            <TH>Categories</TH>
+            <TD>
+                <SELECT name="CAT_ID[]" MULTIPLE>
+                    <?=db_cgi_popupoption('categories', 'cat_id', 'category', '', $CAT_IDS, 0)?>
+                </SELECT>
+            </TD>
+        </TR>
+        <TR CLASS="row<?=($rowcount++ % 2)?>">
+            <TH>Short Description</TH>
+            <TD><TEXTAREA name="DESCRIPTION" COLS=40 ROWS=6><?=on($FORM['DESCRIPTION'])?></TEXTAREA></TD>
+        </TR>
+        <TR CLASS="row<?=($rowcount++ % 2)?>">
+            <TH>Long Description</TH>
+            <TD><TEXTAREA name="LONG_DESCRIPTION" COLS=60 ROWS=20><?=on($FORM['LONG_DESCRIPTION'])?></TEXTAREA></TD>
+        </TR>
+        <TR>
+            <TD CLASS="submitrow" COLSPAN=2>
+                <INPUT type="reset"> 
+                <INPUT type="submit"> 
+                <INPUT type="hidden" name="SUBMIT" VALUE=1> 
+                <INPUT type="hidden" name="OFFER_ID" VALUE="<?=o(getvar('OFFER_ID'))?>"> 
+                <INPUT type="hidden" name="NAME" VALUE="<?=o($FORM['NAME'])?>"> 
+            </TD>
+        </TR>
+    </TABLE>
+</FORM>

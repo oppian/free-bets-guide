@@ -1,0 +1,113 @@
+<DIV ALIGN=LEFT>
+<h1 class="PageTitle"><?=o($SITE['NAME'])?></h1>
+<TABLE>
+    <TR>
+        <TH>ID</TH>
+        <TD CLASS="row<?=($rowcount++ % 2)?>"><?=o($SITE['ID'])?></TD>
+    </TR>
+    <TR>
+        <TH>Site</TH>
+        <TD CLASS="row<?=($rowcount++ % 2)?>"><?=o($SITE['NAME'])?></TD>
+    </TR>
+    <TR>
+        <TH>URL</TH>
+        <TD CLASS="row<?=($rowcount++ % 2)?>"><?=o($SITE['URL'])?></TD>
+    </TR>
+    <TR>
+        <TH>Display URL</TH>
+        <TD CLASS="row<?=($rowcount++ % 2)?>"><?=o($SITE['DISPLAY_URL'])?></TD>
+    </TR>
+    <TR>
+        <TH>Image URL</TH>
+        <TD CLASS="row<?=($rowcount++ % 2)?>"><?=o($SITE['IMAGE_URL'])?></TD>
+    </TR>
+    <TR>
+        <TH>Image</TH>
+        <TD CLASS="row<?=($rowcount++ % 2)?>"><A HREF="<?=o($SITE['URL'])?>"><IMG src="<?=HOME_URL?>img.php?ID=<?=o($SITE[ID])?>" border=0></A></TD>
+    </TR>
+    <TR>
+        <TH>Enabled</TH>
+        <TD CLASS="row<?=($rowcount++ % 2)?>"><?=o($SITE['ENABLED'] ? 'Yes' : 'No')?></TD>
+    </TR>
+    <TR>
+        <TH>Description</TH>
+        <TD CLASS="row<?=($rowcount++ % 2)?>"><?=o($SITE['DESCRIPTION'])?></TD>
+    </TR>
+    <TR>
+        <TH>Long Description</TH>
+        <TD CLASS="row<?=($rowcount++ % 2)?>"><?=$SITE['LONG_DESCRIPTION']?></TD>
+    </TR>
+    <TR>
+        <TH>Categories</TH>
+        <TD CLASS="row<?=($rowcount++ % 2)?>">
+            <?
+            $cat_qid = sites_cat($SITE[ID]);
+            while ($cat = db_fetch($cat_qid))
+            {
+            ?>
+                <?=o($cat[CATEGORY])?><BR>
+            <? } ?>
+        </TD>
+    </TR>
+    <TR>
+        <TH>Notes</TH>
+        <TD CLASS="row<?=($rowcount++ % 2)?>">
+        <PRE>
+<?=o($SITE['NOTES'])?>
+        </PRE>
+        </TD>
+    </TR>
+</TABLE>
+<h2>Offers</h2>
+<?
+$OFFERS_QID = site_offers_list($SITE['ID']);
+$count = 0;
+while ($ROW = db_fetch($OFFERS_QID))
+{
+    $count ++;
+?>
+    <TABLE>
+        <TR>
+            <TH>Offer ID</TH>
+            <TD CLASS="row<?=($rowcount++ % 2)?>"><?=o($ROW[OFFER_ID])?></TD>
+        </TR>
+        <TR>
+            <TH>Offer</TH>
+            <TD CLASS="row<?=($rowcount++ % 2)?>"><?=o($ROW['OFFER'])?></TD>
+        </TR>
+        <TR>
+            <TH>Amount in GBP</TH>
+            <TD CLASS="row<?=($rowcount++ % 2)?>"><?=o($ROW['AMT_GBP'])?></TD>
+        </TR>
+        <TR>
+            <TH>Rating</TH>
+            <TD CLASS="row<?=($rowcount++ % 2)?>"><?=o($ROW['RATING'])?></TD>
+        </TR>
+        <TR>
+            <TH>Expiry</TH>
+            <TD CLASS="row<?=($rowcount++ % 2)?>"><?=o($ROW['EXPIRY'])?></TD>
+        </TR>
+        <TR>
+            <TH>Description</TH>
+            <TD CLASS="row<?=($rowcount++ % 2)?>"><?=o($ROW['DESCRIPTION'])?></TD>
+        </TR>
+        <TR>
+            <TH>Long Description</TH>
+            <TD CLASS="row<?=($rowcount++ % 2)?>"><?=$ROW['LONG_DESCRIPTION']?></TD>
+        </TR>
+        <TR>
+            <TH>Categories</TH>
+            <TD CLASS="row<?=($rowcount++ % 2)?>">
+                <?
+                $cat_qid = offers_cat($ROW[OFFER_ID]);
+                while ($cat = db_fetch($cat_qid))
+                {
+                ?>
+                    <?=o($cat[CATEGORY])?><BR>
+                <? } ?>                
+            </TD>
+        </TR>
+    </TABLE>
+    <P>
+<? } ?>
+</DIV>

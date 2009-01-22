@@ -1,0 +1,14 @@
+<h1 span class="PageTitle">Links</h1>
+This is a list of links to other sites. If you would like your site added please send me an email via the contact link above.
+
+<?php
+$count = 0;
+while ($row = db_fetch($QID))
+{
+$count++;
+?>
+<P>
+<A HREF="<?=o($row[URL])?>" onclick="window.open(this.href,'_blank');return false;"><?=o($row[NAME])?></A>
+<? if (!empty($row[DESCRIPTION])) { ?> - <?=o($row[DESCRIPTION])?><? } ?>
+
+<? } ?>

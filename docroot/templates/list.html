@@ -1,0 +1,60 @@
+
+<?php
+$count = 0;
+while ($row = db_fetch($QID))
+{
+$count++;
+?>
+
+<table width="500" border="0" cellspacing="0" cellpadding="4" bordercolor="#CCCCCC">
+    <tr>
+        <td bgcolor="#0066CC" VALIGN="middle">
+            <TABLE border="0" cellspacing="0" cellpadding="0" WIDTH=100%>
+                <TR VALIGN="middle">
+                    <TD ALIGN=LEFT VALIGN="middle">
+                        <a href="<?=HOME_URL?>link.php?ID=<?=o($row[ID])?>&OFFER_ID=<?=o($row[OFFER_ID])?>"  class="free_bets_title" onMouseOver="window.status='http://<?=o($row[DISPLAY_URL])?>/'; return true" onMouseOut="window.status='Done'; return true">
+                            <?=o($row[OFFER])?> - <?=o($row[NAME])?>
+                        </a>
+                    </TD>
+                    <TD ALIGN=RIGHT VALIGN="middle">
+                        <?
+                        $cat_qid = offers_cat($row[OFFER_ID]);
+                        while ($cat = db_fetch($cat_qid))
+                        {
+                            ?>
+                            &nbsp;<IMG SRC="<?=$cat[IMG]?>" ALT="<?=o($cat[CATEGORY])?> - <?=o($cat[CAT_DESC])?>">
+                            <?
+                        }
+                        ?>
+                        <A HREF="<?=HOME_URL?>free-bets/<?=urlencode($row[NAME])?>/" class="free_bets_title" >More Free Bets From <?=o($row[NAME])?></A>
+                    </TD>
+                </TR>
+            </TABLE>
+        </td>
+    </tr>
+    <tr> 
+        <td bordercolor="#F5F5F5" bgcolor="#F5F5F5"> 
+            <table width="6%" border="0" cellspacing="0" cellpadding="0" align="right">
+                <tr> 
+                    <td>
+                        <A HREF="<?=HOME_URL?>link.php?ID=<?=o($row[ID])?>&OFFER_ID=<?=o($row[OFFER_ID])?>"  onMouseOver="window.status='http://<?=o($row[DISPLAY_URL])?>/'; return true" onMouseOut="window.status='Done'; return true">
+                            <img src="<?=HOME_URL?>img.php?ID=<?=o($row[ID])?>" border="0">
+                        </A>
+                    </td>
+                </tr>
+            </table>
+            <?=o($row[OFFER_DESCRIPTION])?> 
+			- <A HREF="<?=HOME_URL?>free-bets/<?=urlencode($row['NAME'])?>/<?=o($row['OFFER_ID'])?>-<?=urlencode($row['OFFER'])?>/" onclick="window.open(this.href,'_blank'); return false;">More Details</A>
+            <P>
+            <?=o($row[SITE_DESCRIPTION])?>
+            <a href="<?=HOME_URL?>link.php?ID=<?=o($row[ID])?>&OFFER_ID=<?=o($row[OFFER_ID])?>"  onMouseOver="window.status='http://<?=o($row[DISPLAY_URL])?>/'; return true" onMouseOut="window.status='Done'; return true">
+                <?=o($row[DISPLAY_URL])?>
+            </A>
+        </td>
+    </tr>
+</table>
+<HR WIDTH=25%>
+
+<?php 
+} 
+?>

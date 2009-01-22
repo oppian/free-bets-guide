@@ -1,0 +1,4 @@
+AuthUserFile /www/www.free-bets-guide.com/docroot/members/.htpasswd
+AuthName "Members only"
+AuthType Basic
+require valid-user

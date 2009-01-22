@@ -1,0 +1,25 @@
+<table width=100% border="1" cellspacing="1" cellpadding="4" bordercolor="#CCCCCC">
+    <TR><TH>Free Bets<BR><?=o($QL_TITLE)?> List</TH></TR>
+<?php
+$total = 0;
+while ($row = db_fetch($QUICKLIST_QID))
+{
+$total += $row['AMT_GBP'];
+?>
+
+    <tr>
+        <td class="quicklist" >
+            <A HREF="<?=HOME_URL?>link.php?ID=<?=o($row[ID])?>&OFFER_ID=<?=o($row[OFFER_ID])?>" 
+              class="quicklist" 
+              onMouseOver="window.status='http://<?=o($row[DISPLAY_URL])?>/'; return true" onMouseOut="window.status='Done'; return true">
+                <B><?=o($row[OFFER])?></B>
+            </A>
+            <BR>
+            <A HREF="<?=HOME_URL?>free-bets/<?=urlencode($row[NAME])?>/" class="quicklist" >
+                <?=o($row[NAME])?>
+            </A>
+        </TD>
+    </TR>
+    
+<? } ?>
+</TABLE>

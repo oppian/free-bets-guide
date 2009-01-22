@@ -1,0 +1,25 @@
+<table WIDTH=180 border="1" cellspacing="1" cellpadding="4" bordercolor="#CCCCCC">
+    <TR><TH COLSPAN=2>Free Bet Offers</TH></TR>
+<?php
+$count = 0;
+$CAT_LEFTSIDE_QID = cat_list_offers('count desc,total', 1);
+while ($row = db_fetch($CAT_LEFTSIDE_QID))
+{
+    if ($row[COUNT]==0)
+        continue;
+    ?>
+    <tr>
+    		<td class="quicklist">
+            <A TITLE="<?=o($row[CAT_DESC])?>" HREF="<?=HOME_URL?>offers.php?c=<?=urlencode($row[CATEGORY])?>">
+            	<B><?=o($row[COUNT])?> - <?=o($row[CATEGORY])?></B><BR>
+            	 &pound<?=o($row[TOTAL])?>
+            </A>
+        </TD>
+        <TD BGCOLOR="#0066CC" ALIGN=CENTER>
+        	<A TITLE="<?=o($row[CAT_DESC])?>" HREF="<?=HOME_URL?>offers.php?c=<?=urlencode($row[CATEGORY])?>">
+        		<IMG SRC="<?=$row[IMG]?>" ALT="<?=o($row[CATEGORY])?>" BORDER=0>
+        	</A>
+        </TD>
+    </TR>
+<? } ?>
+</TABLE>

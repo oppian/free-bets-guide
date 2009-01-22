@@ -1,0 +1,18 @@
+<link rel="stylesheet" href="<?=HOME_URL?>style.css" type="text/css">
+<title><?=o($SITE[NAME])?> <?=o($OFFER[OFFER])?></title>
+<H1><?=o($SITE[NAME])?> <?=o($OFFER[OFFER])?></H1>
+<?=o($OFFER[DESCRIPTION])?>
+<P>
+<?=$OFFER[LONG_DESCRIPTION]?>
+<P>
+<CENTER>
+<a 
+    href="<?=HOME_URL?>link.php?ID=<?=o($SITE[ID])?>&OFFER_ID=<?=o($OFFER[OFFER_ID])?>" 
+    class="PageTitle" 
+    onMouseOver="window.status='http://<?=o($SITE[DISPLAY_URL])?>/'; return true" 
+    onMouseOut="window.status='Done'; return true">
+    <IMG src="<?=HOME_URL?>img.php?ID=<?=o($SITE[ID])?>" border=0>
+    <P>
+    Visit <?=o($SITE['DISPLAY_URL'])?>
+</A>
+</CENTER>

@@ -1,0 +1,57 @@
+<h1 class="PageTitle"><?=o($CAT)?> Sites List</h1>
+<?=o($CAT_DESC)?>
+<P>
+<?php
+$count = 0;
+while ($row = db_fetch($QID))
+{
+?>
+
+<table width="500" border="0" cellspacing="0" cellpadding="4" bordercolor="#CCCCCC">
+    <tr>
+        <td bgcolor="#0066CC" VALIGN="middle">
+            <TABLE width="100%" border=0 cellspacing="0" cellpadding="0">
+                <TR VALIGN="middle" VALIGN="middle">
+                    <TD ALIGN="left" VALIGN="middle">
+                        <A HREF="<?=HOME_URL?>free-bets/<?=urlencode($row[NAME])?>/" CLASS="free_bets_title">
+                            Free bets <?=o($row[NAME])?>
+                        </a>
+                    </TD>
+                    <TD ALIGN="right" VALIGN="middle" VALIGN="middle">
+                        <?
+                        $cat_qid = sites_cat($row[ID]);
+                        while ($cat = db_fetch($cat_qid))
+                        {
+                            ?>
+                            &nbsp;<IMG SRC="<?=$cat[IMG]?>" ALT="<?=o($cat[CATEGORY])?> - <?=o($cat[CAT_DESC])?>">
+                            <?
+                        }
+                        ?>
+                    </TD>
+                </TR>
+            </TABLE>
+        </td>
+    </tr>
+    <tr> 
+        <td bordercolor="#F5F5F5" bgcolor="#F5F5F5"> 
+            <table width="6%" border="0" cellspacing="0" cellpadding="0" align="right">
+                <tr> 
+                    <td>
+                        <A HREF="<?=HOME_URL?>link.php?ID=<?=o($row[ID])?>"  onMouseOver="window.status='http://<?=o($row[DISPLAY_URL])?>/'; return true" onMouseOut="window.status='Done'; return true">
+                            <img src="<?=HOME_URL?>img.php?ID=<?=o($row[ID])?>" border="0">
+                        </A>
+                    </td>
+                </tr>
+            </table>
+            <?=o($row[DESCRIPTION])?>
+            <a href="<?=HOME_URL?>link.php?ID=<?=o($row[ID])?>"  onMouseOver="window.status='http://<?=o($row[DISPLAY_URL])?>/'; return true" onMouseOut="window.status='Done'; return true">
+                <?=o($row[DISPLAY_URL])?>
+            </A>
+        </td>
+    </tr>
+</table>
+<HR WIDTH=25%>
+
+<?php 
+} 
+?>

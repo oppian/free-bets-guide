@@ -1,0 +1,34 @@
+<h1 class="PageTitle">Articles List</h1>
+<TABLE>
+    <TR>
+        <TH>Id</TH>
+        <TH>Date</TH>
+        <TH>Title</TH>
+        <TH>Action</TH>
+    </TR>    
+<?php
+$count=0;
+while ($row = db_fetch($QID))
+{
+$count++;
+?>
+    <TR CLASS="row<?=($rowcount++ % 2)?>">
+        <TD><?=o($row[ID])?></TD>
+        <TD><?=o($row[DATE])?></TD>
+        <TD><A HREF="<?=HOME_URL.'admin/article_edit.php'?>?ARTICLE_ID=<?=o($row[ID])?>"><?=o($row[TITLE])?></A></TD>
+        <TD>
+            <A HREF="<?=HOME_URL.'admin/article_edit.php'?>?ARTICLE_ID=<?=o($row[ID])?>">Edit</A> 
+            <A HREF="<?=HOME_URL.'admin/article_delete.php'?>?ARTICLE_ID=<?=o($row[ID])?>">Delete</A> 
+        </TD>
+    </TR>
+<?php } ?>
+    <TR>
+        <TH COLSPAN=5><HR><?=$count?> rows</TH>
+    </TR>
+    <TR>
+        <TD COLSPAN=5 ALIGN=right>
+            <A HREF="<?=HOME_URL.'admin/article_new.php'?>">New article</A>
+        </TD>
+    </TR>
+</TABLE>
+    

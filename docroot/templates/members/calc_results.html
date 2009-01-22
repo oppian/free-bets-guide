@@ -1,0 +1,97 @@
+<TABLE>
+    <TR><TH COLSPAN=2>Input</TH></TR>
+    <TR>
+        <TH>Stake <IMG SRC="<?=IMAGE_DIR?>help.gif" alt="The size of your qualifying or bonus bet."></TH>
+        <TD><?=o(getvar('BET_SIZE'))?></TD>
+    </TR>
+    <TR>
+        <TH>Stake Returned <IMG SRC="<?=IMAGE_DIR?>help.gif" alt="Whether the stake is returned with winnigs."></TH>
+        <TD><?=getvar('STAKE_RET') ? 'Yes' : 'No'?></TD>
+    </TR>
+    <TR>
+        <TH>Back Odds <IMG SRC="<?=IMAGE_DIR?>help.gif" alt="The decimal odds of the bet with the bookmaker."></TH>
+        <TD><?=o(getvar('BACK_ODDS'))?></TD>
+    </TR>
+    <TR>
+        <TH>Lay Odds <IMG SRC="<?=IMAGE_DIR?>help.gif" alt="The decimal odds of the lay bet with the exchange."></TH>
+        <TD><?=o(getvar('LAY_ODDS'))?></TD>
+    </TR>
+    <TR>
+        <TH>Exchange Commission <IMG SRC="<?=IMAGE_DIR?>help.gif" alt="The commission on winnings at the exchange."></TH>
+        <TD><?=o(getvar('COMMISSION'))?>%</TD>
+    </TR>
+</TABLE>
+<P>
+<HR WIDTH=50>
+<P>
+<TABLE>
+    <TR><TH COLSPAN=2>Calculator results</TH></TR>
+    <TR>
+        <TH>Lay Amount <IMG SRC="<?=IMAGE_DIR?>help.gif" alt="This is the size of the lay bet you will need to make at the exchange. It is the amount you would win at the exchange before their commission is taken out."></TH>
+        <TD><B><?=no($LAY_STAKE)?></B></TD>
+    </TR>
+    <TR>
+        <TH>Lay Risk 
+            <IMG SRC="<?=IMAGE_DIR?>help.gif" alt="This is the amount you will need in your betting exchange account. It represents the payout you will have to make if you lose the bet at the exchange.">
+        </TH>
+        <TD><?=no($LAY_RISK)?></TD>
+    </TR>
+    <TR>
+        <TH COLSPAN=2>Result</TH>
+    </TR>
+    <TR>
+        <TH>Diff From Bet <IMG SRC="<?=IMAGE_DIR?>help.gif" alt="The amount you lose from your qualifying or bonus bet amount."></TH>
+        <TD><?=no($OUTCOME - $BET_SIZE)?></TD>
+    </TR>
+    <TR>
+        <TH>As % <IMG SRC="<?=IMAGE_DIR?>help.gif" alt="The % difference. More positive is better. If you got a positive number you have an arb take it while you can! Above -6% is good for bets with stake returned. For stakes not returned, better then -35% is good."></TH>
+        <TD><?=no(($OUTCOME - $BET_SIZE) / $BET_SIZE * 100)?>%</TD>
+    </TR>
+
+</TABLE>
+<P>
+<HR WIDTH=50>
+<P>
+<TABLE>
+    <TR>
+        <TD>
+            <TABLE>
+                <TR>
+                    <TH COLSPAN=2>Outcome 1</TH>
+                </TR>
+                <TR>
+                    <TH>Bookmaker <IMG SRC="<?=IMAGE_DIR?>help.gif" alt="The amount you will have at the bookmaker including your stake if returned."></TH>
+                    <TD><?=no($BACK_RETURN)?></TD>
+                </TR>
+                <TR>
+                    <TH>Exchange <IMG SRC="<?=IMAGE_DIR?>help.gif" alt="The amount you will payout at the exchange."></TH>
+                    <TD>-<?=no($LAY_RISK)?></TD>
+                </TR>
+                <TR>
+                    <TH>Net Result <IMG SRC="<?=IMAGE_DIR?>help.gif" alt="The net result of your qualifying or bonus bet amount."></TH>
+                    <TD><?=no($OUTCOME)?></TD>
+                </TR>
+            </TABLE>
+        </TD>
+        <TD>
+            <TABLE>
+                <TR>
+                    <TH COLSPAN=2>Outcome 2</TH>
+                </TR>
+                <TR>
+                    <TH>Bookmaker <IMG SRC="<?=IMAGE_DIR?>help.gif" alt="The amount you will have at the bookmaker including your stake. Its 0 because you lost your stake."></TH>
+                    <TD>0</TD>
+                </TR>
+                <TR>
+                    <TH>Exchange <IMG SRC="<?=IMAGE_DIR?>help.gif" alt="The amount you win at the exchange after commission."></TH>
+                    <TD>+<?=no($OUTCOME)?></TD>
+                </TR>
+                
+                <TR>
+                    <TH>Net Result <IMG SRC="<?=IMAGE_DIR?>help.gif" alt="The net result of your qualifying or bonus bet amount."></TH>
+                    <TD><?=no($OUTCOME)?></TD>
+                </TR>
+            </TABLE>
+        </TD>
+</TABLE>
+    

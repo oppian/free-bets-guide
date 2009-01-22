@@ -1,0 +1,65 @@
+<DIV ALIGN=LEFT>
+<h1 class="PageTitle">Free bets <?=o($SITE['NAME'])?></h1>
+<P>
+<?=o($SITE['DESCRIPTION'])?>
+<CENTER><HR WIDTH=25%></CENTER>
+<P>
+<?
+$OFFERS_QID = site_offers_list($SITE['ID']);
+$count = 0;
+while ($ROW = db_fetch($OFFERS_QID))
+{
+    $count ++;
+?>
+<a href="<?=HOME_URL?>link.php?ID=<?=o($SITE[ID])?>&OFFER_ID=<?=o($ROW[OFFER_ID])?>" class="PageTitle"  onMouseOver="window.status='http://<?=o($SITE[DISPLAY_URL])?>/'; return true" onMouseOut="window.status='Done'; return true">
+    <H3><?=o($ROW['OFFER'])?></H3>
+</A>
+<P>
+<?=o($ROW['DESCRIPTION'])?> 
+- <A HREF="<?=HOME_URL?>free-bets/<?=urlencode($SITE['NAME'])?>/<?=o($ROW['OFFER_ID'])?>-<?=urlencode($ROW['OFFER'])?>/" onclick="window.open(this.href,'_blank'); return false;">More Info</A>
+<ul>
+<?
+    $cat_qid = offers_cat($ROW[OFFER_ID]);
+    while ($cat = db_fetch($cat_qid))
+    {
+    ?>
+    <li><?=o($cat[CATEGORY])?>
+    <? } ?>
+</ul>
+<P>
+<CENTER><HR WIDTH=25%></CENTER>
+<? 
+} 
+if ($count == 0)
+{
+    ?>
+    Sorry, no free bets listed, but check back soon.
+    <P>
+    <CENTER><HR WIDTH=25%></CENTER>
+<? } ?>
+
+<P>
+<CENTER>
+<P>
+<a href="<?=HOME_URL?>link.php?ID=<?=o($SITE[ID])?>" class="PageTitle"  onMouseOver="window.status='http://<?=o($SITE[DISPLAY_URL])?>/'; return true" onMouseOut="window.status='Done'; return true">
+    <IMG src="<?=HOME_URL?>img.php?ID=<?=o($SITE[ID])?>" border=0>
+    <P>
+    Visit <?=o($SITE['DISPLAY_URL'])?>
+</A>
+</CENTER>
+<P>
+
+<H2><?=o($SITE['NAME'])?> Categories</H2>
+<ul>
+<?
+$cat_qid = sites_cat($SITE[ID]);
+while ($cat = db_fetch($cat_qid))
+{
+?>
+    <li><?=o($cat[CATEGORY])?>
+<? } ?>
+</ul>
+<P>
+<?=$SITE['LONG_DESCRIPTION']?>
+<HR>
+</DIV>

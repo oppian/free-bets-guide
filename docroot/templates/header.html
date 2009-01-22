@@ -1,0 +1,39 @@
+<HTML>
+<HEAD>
+<title><?=o($TITLE)?></title>
+<meta name="keywords" content="online betting, free money, free bet, free bets, sports betting, <?=o($SITE['NAME'])?>">
+<meta name="description" content="Looking for a free bet? Free Bets Guide lists all the free bets and bonuses from all the best online sportsbooks just for you.">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="stylesheet" href="<?=HOME_URL?>style.css" type="text/css">
+</HEAD>
+
+<BODY>
+<CENTER>
+<TABLE border="0" cellspacing="0" cellpadding="0">
+    <TR>
+        <TD COLSPAN="3" HEIGHT=50 bgcolor="#0066CC"><? include(TEMPLATE_DIR."/title.html"); ?></TD>
+    </TR>
+    <TR>
+        <TD COLSPAN="3"><? include(TEMPLATE_DIR."/topside.html"); ?></TD>
+    </TR>
+    <? if (!empty($SUB_MENU)) { ?>
+    <TR>
+        <TD COLSPAN="3"><? include(TEMPLATE_DIR.$SUB_MENU); ?></TD>
+    </TR>
+    <? } ?>
+    <TR VALIGN="top">
+        <TD>
+            <? include(TEMPLATE_DIR."/leftside.html"); ?>
+        </TD>
+        <TD>
+        
+
+<span CLASS="mid">
+<span CLASS="message">
+<?php
+if (!empty($MESSAGE))
+{
+    echo o($MESSAGE);
+}
+?>
+</span>

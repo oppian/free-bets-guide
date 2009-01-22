@@ -1,0 +1,4 @@
+AuthUserFile /www/www.free-bets-guide.com/docroot/admin/.htpasswd
+AuthName "Please Log On"
+AuthType Basic
+require valid-user

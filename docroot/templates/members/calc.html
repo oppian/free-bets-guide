@@ -1,0 +1,55 @@
+<H2>Calculator</H2>
+<FORM ACTION="<?=ME?>" METHOD="get">
+    <TABLE>
+        <TR CLASS="row<?=($rowcount++ % 2)?>">
+            <TH>Bet Size <IMG SRC="<?=IMAGE_DIR?>help.gif" alt="The size of your qualifying or bonus bet"></TH>
+            <TD><INPUT type="text" size=5 name="BET_SIZE" value="<?=o($FORM['BET_SIZE'])?>"></TD>
+        </TR>
+        <TR CLASS="row<?=($rowcount++ % 2)?>">
+            <TH>
+                Stake returned 
+                <IMG SRC="<?=IMAGE_DIR?>help.gif" alt="If this is a qualifying bet then choose yes, otherwise if this is a bonus bet check the t&c to see if the bonus stake is returned with winnigs">
+            </TH>
+            <TD><INPUT TYPE="radio" NAME="STAKE_RET" VALUE="1" CHECKED> Yes <INPUT TYPE="radio" NAME="STAKE_RET" VALUE="0"> No</TD>
+        </TR>
+        <TR CLASS="row<?=($rowcount++ % 2)?>">
+            <TH>Back Odds <IMG SRC="<?=IMAGE_DIR?>help.gif" alt="The decimal odds of the bet with the bookmaker"></TH>
+            <TD><INPUT type="text" size=8 name="BACK_ODDS" value="<?=o($FORM['BACK_ODDS'])?>"></TD>
+        </TR>
+        <!--
+        <TR CLASS="row<?=($rowcount++ % 2)?>">
+            <TH>Site</TH>
+            <TD>
+                <SELECT name="BACK_SITE">
+                    <?=db_cgi_popupoption('sites', 'id', 'name', '', $FORM['BACK_SITE'], 0)?>
+                </SELECT>
+            </TD>
+        </TR>
+        -->
+        <TR CLASS="row<?=($rowcount++ % 2)?>">
+            <TH>Lay Odds <IMG SRC="<?=IMAGE_DIR?>help.gif" alt="The decimal odds of the lay bet with the exchange"></TH>
+            <TD><INPUT type="text" size=8 name="LAY_ODDS" value="<?=o($FORM['LAY_ODDS'])?>"></TD>
+        </TR>
+        <!--
+        <TR CLASS="row<?=($rowcount++ % 2)?>">
+            <TH>Site</TH>
+            <TD>
+                <SELECT name="LAY_SITE">
+                    <?=db_cgi_popupoption('sites', 'id', 'name', '', $FORM['LAY_SITE'], 0)?>
+                </SELECT> 
+            </TD>
+        </TR>
+        -->
+        <TR CLASS="row<?=($rowcount++ % 2)?>">
+            <TH>Exchange Commission <IMG SRC="<?=IMAGE_DIR?>help.gif" alt="The commission on winnings at the exchange"></TH>
+            <TD><INPUT type="text" size=3 name="COMMISSION" value="<?=o($FORM['COMMISSION'])?>">%</TD>
+        </TR>
+        <TR>
+            <TD CLASS="submitrow" COLSPAN=2>
+                <INPUT type="reset"> 
+                <INPUT type="submit"> 
+                <INPUT type="hidden" name="SUBMIT" VALUE=1> 
+            </TD>
+        </TR>
+    </TABLE>
+</FORM>

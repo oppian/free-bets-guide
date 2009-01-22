@@ -1,0 +1,39 @@
+<span class="PageTitle">Sites List</span><br>
+<TABLE>
+    <TR>
+        <TH>Id</TH>
+        <TH>Name</TH>
+        <TH>Display URL</TH>
+        <TH>Enabled</TH>
+        <TH>Image</TH>
+        <TH>Action</TH>
+    </TR>    
+<?php
+$count=0;
+while ($row = db_fetch($QID))
+{
+$count++;
+?>
+    <TR CLASS="row<?=($rowcount++ % 2)?>">
+        <TD><?=o($row[ID])?></TD>
+        <TD><A HREF="<?=HOME_URL.'admin/site_edit.php'?>?SITE_ID=<?=o($row[ID])?>"><?=o($row[NAME])?></A></TD>
+        <TD><A HREF="<?=HOME_URL.'admin/site_edit.php'?>?SITE_ID=<?=o($row[ID])?>"><?=o($row[DISPLAY_URL])?></A></TD>
+        <TD><?=o($row[ENABLED] ? 'Yes' : 'No')?></TD>
+        <TD><img src="<?=o($row[IMAGE_URL])?>" border="0"></TD>
+        <TD>
+            <A HREF="<?=HOME_URL.'admin/site.php'?>?SITE_ID=<?=o($row[ID])?>">View</A> 
+            <A HREF="<?=HOME_URL.'admin/site_edit.php'?>?SITE_ID=<?=o($row[ID])?>">Edit</A> 
+            <A HREF="<?=HOME_URL.'admin/site_delete.php'?>?SITE_ID=<?=o($row[ID])?>">Delete</A> 
+        </TD>
+    </TR>
+<?php } ?>
+    <TR>
+        <TH COLSPAN=5><HR><?=$count?> rows</TH>
+    </TR>
+    <TR>
+        <TD COLSPAN=5 ALIGN=right>
+            <A HREF="<?=HOME_URL.'admin/site_new.php'?>">New Site</A>
+        </TD>
+    </TR>
+</TABLE>
+    

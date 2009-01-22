@@ -1,0 +1,25 @@
+<H1 class="PageTitle">Article</H1>
+<FORM ACTION="<?=ME?>" METHOD="post">
+    <TABLE>
+        <TR CLASS="row<?=($rowcount++ % 2)?>">
+            <TH>Title</TH>
+            <TD><INPUT type="text" size=40 name="TITLE" value="<?=o($FORM['TITLE'])?>"></TD>
+        </TR>
+        <TR CLASS="row<?=($rowcount++ % 2)?>">
+            <TH>Short</TH>
+            <TD><TEXTAREA name="SHORT" COLS=40 ROWS=6><?=on($FORM['SHORT'])?></TEXTAREA></TD>
+        </TR>
+        <TR CLASS="row<?=($rowcount++ % 2)?>">
+            <TH>Contents</TH>
+            <TD><TEXTAREA name="CONTENTS" COLS=60 ROWS=20><?=on($FORM['CONTENTS'])?></TEXTAREA></TD>
+        </TR>
+        <TR>
+            <TD CLASS="submitrow" COLSPAN=2>
+                <INPUT type="reset"> 
+                <INPUT type="submit"> 
+                <INPUT type="hidden" name="SUBMIT" VALUE=1> 
+                <INPUT type="hidden" name="ARTICLE_ID" VALUE="<?=o(getvar('ARTICLE_ID'))?>">
+            </TD>
+        </TR>
+    </TABLE>
+</FORM>

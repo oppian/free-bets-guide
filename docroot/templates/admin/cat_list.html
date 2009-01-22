@@ -1,0 +1,34 @@
+<h2 class="PageTitle">Category List</h2>
+<TABLE>
+    <TR>
+        <TH>Cat Id</TH>
+        <TH>Category</TH>
+        <TH>Image</TH>
+        <TH>Action</TH>
+    </TR>    
+<?php
+$count=0;
+while ($row = db_fetch($QID))
+{
+$count++;
+?>
+    <TR CLASS="row<?=($rowcount++ % 2)?>">
+        <TD><?=o($row[CAT_ID])?></TD>
+        <TD><A HREF="<?=HOME_URL.'admin/cat_edit.php'?>?CAT_ID=<?=o($row[CAT_ID])?>"><?=o($row[CATEGORY])?></A></TD>
+        <TH><IMG SRC="<?=o($row[IMG])?>" ALT="<?=o($row[CAT_DESC])?>"></TH>
+        <TD>
+            <A HREF="<?=HOME_URL.'admin/cat_edit.php'?>?CAT_ID=<?=o($row[CAT_ID])?>">Edit</A> 
+            <A HREF="<?=HOME_URL.'admin/cat_delete.php'?>?CAT_ID=<?=o($row[CAT_ID])?>">Delete</A> 
+        </TD>
+    </TR>
+<?php } ?>
+    <TR>
+        <TH COLSPAN=6><HR><?=$count?> rows</TH>
+    </TR>
+    <TR>
+        <TD COLSPAN=6 ALIGN=right>
+            <A HREF="<?=HOME_URL.'admin/cat_new.php'?>">New Category</A>
+        </TD>
+    </TR>
+</TABLE>
+    

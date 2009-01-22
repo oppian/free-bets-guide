@@ -1,0 +1,26 @@
+<h2 class="PageTitle">Category</h2>
+<FORM ACTION="<?=ME?>" METHOD="post">
+    <TABLE>
+        <TR CLASS="row<?=($rowcount++ % 2)?>">
+            <TH>Category</TH>
+            <TD><INPUT type="text" size=20 name="CATEGORY" value="<?=o($FORM['CATEGORY'])?>"></TD>
+        </TR>
+        <TR CLASS="row<?=($rowcount++ % 2)?>">
+            <TH>Image URL</TH>
+            <TD><INPUT type="text" size=60 name="IMG" value="<?=o($FORM['IMG'])?>"></TD>
+        </TR>
+        <TR CLASS="row<?=($rowcount++ % 2)?>">
+            <TH>Description</TH>
+            <TD><TEXTAREA name="CAT_DESC" COLS=40 ROWS=6><?=on($FORM['CAT_DESC'])?></TEXTAREA></TD>
+        </TR>
+
+        <TR>
+            <TD CLASS="submitrow" COLSPAN=2>
+                <INPUT type="reset"> 
+                <INPUT type="submit"> 
+                <INPUT type="hidden" name="SUBMIT" VALUE=1> 
+                <INPUT type="hidden" name="CAT_ID" VALUE="<?=o(getvar('CAT_ID'))?>"> 
+            </TD>
+        </TR>
+    </TABLE>
+</FORM>

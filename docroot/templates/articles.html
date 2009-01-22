@@ -1,0 +1,11 @@
+<h1 span class="PageTitle">Articles</h1>
+This is a list of articles written by Free Bets Guide.
+<P>
+<DIV align="left">
+<? while ($row = db_fetch($QID)) { ?>
+    <hr width=25%>
+    <A HREF="<?=HOME_URL?>articles/<?=urlencode($row[TITLE])?>/"><h2><?=o($row[TITLE])?></h2></A>
+    <?=o($row[SHORT])?><BR>
+    <A HREF="<?=HOME_URL?>articles/<?=urlencode($row[TITLE])?>/">READ MORE</A>
+<? } ?>
+</DIV>

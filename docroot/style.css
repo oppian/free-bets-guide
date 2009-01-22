@@ -1,0 +1,195 @@
+.quicklist
+{
+	text-align: center;
+}
+
+.menu1 
+{ 
+    font-family: Verdana, Arial, Helvetica, sans-serif; 
+    font-size: 11px; 
+    font-style: normal; 
+    font-weight: bold; 
+    font-variant: normal;
+    color: #FFFFFF;
+    background-color: #0066CC;
+    text-decoration: none;
+} 
+
+.title
+{
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+    color: #FFFFFF;
+    background-color: #0066CC;
+}
+
+.row0
+{
+    background-color: #ADD8E6;
+}
+
+.row1
+{
+    background-color: #00BFFF;
+}
+
+th
+{
+    color: #FFFFFF;
+    background-color: #0066CC;
+    font-family: Verdana, Arial, Helvetica, sans-serif; 
+    font-size: 12px;
+}
+
+.mid
+{
+    width:500px;
+    text-align: center;
+    margin-left: 5;
+    margin-top: 5;
+}
+
+body, tr, td, li
+{ 
+	font-family: Verdana, Arial, Helvetica, sans-serif; 
+	font-size: 12px; 
+	font-style: normal; 
+	line-height: normal; 
+	font-weight: normal; 
+	font-variant: normal; 
+	color: #000000
+}
+
+li
+{
+    margin-left: 15%;
+}
+
+h1 { font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 20px; font-style: normal; line-height: normal; font-weight: 
+bold; color: #000000} 
+
+.PageTitle { font-family: 
+Verdana, Arial, Helvetica, sans-serif; font-size: 20px; font-style: normal; line-height: 
+normal; font-weight: bold; color: #0066CC} 
+
+blockquote { font-family: Verdana, 
+Arial, Helvetica, sans-serif; font-size: 10px; color: #CC0000; font-style: normal; 
+line-height: normal; font-weight: normal; font-variant: normal; text-transform: 
+capitalize} 
+
+h2 
+{ 
+	font-family: Arial, Helvetica, sans-serif; 
+	font-size: 16px; 
+	font-style: normal; 
+	line-height: normal; 
+	font-weight: bold; 
+	font-variant: normal; 
+	color: #000000
+} 
+
+.links_on_predictions { font-family: 
+Verdana, Arial, Helvetica, sans-serif; font-size: 14px; font-style: normal; font-weight: 
+bold; font-variant: normal; text-transform: capitalize; color: #CCCCCC} 
+
+.menuLinks {
+	font-family: Tahoma;
+	font-size: 11px;
+	font-style: normal;
+	line-height: normal;
+	color: #0000CC;
+	font-weight: bold;
+	text-decoration: none;
+} 
+
+u { font-weight: normal} 
+
+a {
+	color: 
+#0033CC;
+
+} 
+
+dfn { font-family: Arial, Helvetica, sans-serif; font-size: 10px; font-style: 
+normal; line-height: normal; font-weight: bold; font-variant: normal; text-transform: 
+capitalize; color: #FF0000} 
+
+.tips-title { font-family: verdana, Helvetica, sans-serif; 
+font-size: 11px; font-style: normal; line-height: normal; font-weight: bold; font-variant: 
+normal; color: #0000CC}
+ 
+<style type="text/css">
+
+  a:link { text-decoration:underline }
+  a:visited { }
+  a:hover {
+;
+; 
+color: #FF0000
+
+}
+  a:active {
+;
+}
+
+</style>
+
+.nltitle { font-family: Arial, Helvetica, sans-serif; font-size: 16px; font-style: 
+oblique; line-height: normal; font-weight: bold; font-variant: normal; text-transform: 
+capitalize; color: #FFCC00} .nltitle { font-family: Arial, Helvetica, sans-serif; 
+font-size: 39px; font-style: normal; line-height: normal; font-weight: bold; font-variant: 
+normal; text-transform: capitalize; color: #FFCC00} .subtitle_newsletter { font-family: 
+Arial, Helvetica, sans-serif; font-size: 13px; font-weight: bold; color: #FFFFFF; 
+font-style: italic} .tipstext { font-family: Verdana, Arial, Helvetica, sans-serif; 
+font-size: 11px; font-weight: normal; color: #000000; } .news5 { font-family: 
+Verdana, Arial, Helvetica, sans-serif; font-size: 10px; text-transform: capitalize; 
+color: #0000FF; font-weight: normal; font-style: normal; text-decoration: none} .new1 { font-family: arial, 
+Helvetica, sans-serif; font-size: 15px; font-weight: bold; font-style: 
+oblique; color: #FFFFFF} .newsletter_signup { font-family: Arial, Helvetica, sans-serif; font-size: 22px; font-weight: bold; color: #0000CC} .arial_small 
+{
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	font-weight: bold;
+} 
+
+.free_bets_title 
+{
+	font-family: Tahoma;
+	font-weight: bold;
+	color: #FFFFFF;
+	font-size: 11px;
+} 
+
+.new2 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 18px;
+	color: #FFFFFF;
+	font-weight: bold;
+	font-style: italic;
+	text-decoration: none;
+}
+.betdaq_page {  font-family: tahoma, verdana, arial; font-size: 11px; line-height: 17px; color: #FFFFFF}
+.newsletter_page {  font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 11px; line-height: 13px}
+.final_verdict {  font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 10px; color: #CC0000; font-weight: bold; text-transform: capitalize}
+.betfair_page {  font-family: "Times New Roman", Times, serif; font-size: 22px}
+.spaces_links {
+	line-height: 22px;
+	font-size: 11px;
+; color: #0000CC
+; font-family: Tahoma
+}
+.bookmaker_links {  font-size: 12px; font-style: normal; font-weight: bold; font-family: Verdana, Arial, Helvetica, sans-serif; color: #FFFFFF; text-decoration: none}
+.verdana_10 {  font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 10px; font-weight: bold}
+.tipspage_fonts {  font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 17px; color: #0066CC; font-weight: bold; text-decoration: none}
+.emailpage_text {  font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 13px; font-weight: bold; color: #0000C6}
+.freebetlinktext {  font-family: Tahoma; font-size: 11px; color: #0033CC; font-weight: bold}
+.tahoma1 {  font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 10px; color: #FFFFFF; text-transform: none}
+.Predictions {  font-family: Arial, Helvetica, sans-serif; font-size: 18px; font-weight: bold; text-decoration: none; color: #0033CC}
+.verdana10 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	text-decoration: none;
+
+
+}

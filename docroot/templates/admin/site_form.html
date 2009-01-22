@@ -1,0 +1,61 @@
+<span class="PageTitle">Site</span><br>
+<FORM ACTION="<?=ME?>" METHOD="post">
+    <TABLE>
+        <TR CLASS="row<?=($rowcount++ % 2)?>">
+            <TH>Name</TH>
+            <TD><INPUT type="text" size=20 name="NAME" value="<?=o($FORM['NAME'])?>"></TD>
+        </TR>
+        <TR CLASS="row<?=($rowcount++ % 2)?>">
+            <TH>Display URL</TH>
+            <TD><INPUT type="text" size=30 name="DISPLAY_URL" value="<?=o($FORM['DISPLAY_URL'])?>"></TD>
+        </TR>
+        <TR CLASS="row<?=($rowcount++ % 2)?>">
+            <TH>Real URL</TH>
+            <TD><INPUT type="text" size=100 name="URL" value="<?=o($FORM['URL'])?>"></TD>
+        </TR>
+        <TR CLASS="row<?=($rowcount++ % 2)?>">
+            <TH>Image URL</TH>
+            <TD><INPUT type="text" size=100 name="IMAGE_URL" value="<?=o($FORM['IMAGE_URL'])?>"></TD>
+        </TR>
+        <? if (!empty($FORM['IMAGE_URL'])) { ?>
+        <TR CLASS="row<?=($rowcount++ % 2)?>">
+            <TH>Image</TH>
+            <TD><IMG src="<?=o($FORM['IMAGE_URL'])?>" border=0></TD>
+        </TR>
+        <? } ?>
+        <TR CLASS="row<?=($rowcount++ % 2)?>">
+            <TH>Enabled</TH>
+            <TD>
+                <INPUT type="checkbox" name="ENABLED" value="1" <?=checked($FORM['ENABLED'], 1)?>>
+            </TD>
+        </TR>
+        <TR CLASS="row<?=($rowcount++ % 2)?>">
+            <TH>Categories</TH>
+            <TD>
+                <SELECT name="CAT_ID[]" MULTIPLE>
+                    <?=db_cgi_popupoption('categories', 'cat_id', 'category', '', $CAT_IDS, 0)?>
+                </SELECT>
+            </TD>
+        </TR>
+        <TR CLASS="row<?=($rowcount++ % 2)?>">
+            <TH>Short Description</TH>
+            <TD><TEXTAREA name="DESCRIPTION" COLS=40 ROWS=6><?=on($FORM['DESCRIPTION'])?></TEXTAREA></TD>
+        </TR>
+        <TR CLASS="row<?=($rowcount++ % 2)?>">
+            <TH>Long Description</TH>
+            <TD><TEXTAREA name="LONG_DESCRIPTION" COLS=60 ROWS=20><?=on($FORM['LONG_DESCRIPTION'])?></TEXTAREA></TD>
+        </TR>
+        <TR CLASS="row<?=($rowcount++ % 2)?>">
+            <TH>Notes</TH>
+            <TD><TEXTAREA name="NOTES" COLS=60 ROWS=20><?=on($FORM['NOTES'])?></TEXTAREA></TD>
+        </TR>
+        <TR>
+            <TD CLASS="submitrow" COLSPAN=2>
+                <INPUT type="reset"> 
+                <INPUT type="submit"> 
+                <INPUT type="hidden" name="SUBMIT" VALUE=1> 
+                <INPUT type="hidden" name="SITE_ID" VALUE="<?=o(getvar('SITE_ID'))?>">
+            </TD>
+        </TR>
+    </TABLE>
+</FORM>

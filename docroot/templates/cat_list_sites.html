@@ -1,0 +1,16 @@
+<h1 class="PageTitle">Sites Category List</h1>
+Please select category below:
+<DIV ALIGN="center">
+<P>
+<A HREF="<?=HOME_URL?>sites/">All (<?=o(sites_count())?>)</A>
+<?php
+$count = 0;
+while ($row = db_fetch($QID))
+{
+    if ($row[COUNT]==0)
+        continue;
+    ?>
+    <P>
+    <A HREF="<?=HOME_URL?>sites/<?=urlencode($row[CATEGORY])?>/"><?=o($row[CATEGORY])?> (<?=o($row[COUNT])?>)</A>
+<? } ?>
+</DIV>

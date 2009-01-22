@@ -1,0 +1,16 @@
+<h1 class="PageTitle">Free Bets and Bonuses Category List</h1>
+Please select category below:
+<DIV ALIGN="center">
+<P>
+<A HREF="<?=HOME_URL?>offers/">All (<?=o(offers_count())?>)</A>
+<?php
+$count = 0;
+while ($row = db_fetch($QID))
+{
+    if ($row[COUNT]==0)
+        continue;
+    ?>
+    <P>
+    <A HREF="<?=HOME_URL?>offers/<?=urlencode($row[CATEGORY])?>/"><?=o($row[CATEGORY])?> (<?=o($row[COUNT])?>)</A>
+<? } ?>
+</DIV>

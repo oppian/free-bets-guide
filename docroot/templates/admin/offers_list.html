@@ -1,0 +1,38 @@
+<span class="PageTitle">Offers List</span><br>
+<TABLE>
+    <TR>
+        <TH>Offer Id</TH>
+        <TH>Name</TH>
+        <TH>Offer</TH>
+        <TH>Amt &pound;GPB</TH>
+        <TH>Rating</TH>
+        <TH>Action</TH>
+    </TR>    
+<?php
+$count=0;
+while ($row = db_fetch($QID))
+{
+$count++;
+?>
+    <TR CLASS="row<?=($rowcount++ % 2)?>">
+        <TD><?=o($row[OFFER_ID])?></TD>
+        <TD><A HREF="<?=HOME_URL.'admin/site_edit.php'?>?SITE_ID=<?=o($row[SITE_ID])?>"><?=o($row[NAME])?></A></TD>
+        <TD><A HREF="<?=HOME_URL.'admin/offer_edit.php'?>?OFFER_ID=<?=o($row[OFFER_ID])?>"><?=o($row[OFFER])?></A></TD>
+        <TD>&pound;<?=o($row[AMT_GBP])?></TD>
+        <TD><?=o($row[RATING])?></TD>
+        <TD>
+            <A HREF="<?=HOME_URL.'admin/offer_edit.php'?>?OFFER_ID=<?=o($row[OFFER_ID])?>">Edit</A> 
+            <A HREF="<?=HOME_URL.'admin/offer_delete.php'?>?OFFER_ID=<?=o($row[OFFER_ID])?>">Delete</A> 
+        </TD>
+    </TR>
+<?php } ?>
+    <TR>
+        <TH COLSPAN=6><HR><?=$count?> rows</TH>
+    </TR>
+    <TR>
+        <TD COLSPAN=6 ALIGN=right>
+            <A HREF="<?=HOME_URL.'admin/offer_new.php'?>">New Offer</A>
+        </TD>
+    </TR>
+</TABLE>
+    

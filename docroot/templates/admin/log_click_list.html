@@ -1,0 +1,30 @@
+<h2 class="PageTitle">Log Click List</h2>
+<TABLE>
+    <TR>
+        <TH>Date</TH>
+        <TH>Site</TH>
+        <TH>Offer</TH>
+        <TH>IP</TH>
+        <TH>Referer</TH>
+        <TH>User Agent</TH>
+    </TR>    
+<?php
+$count=0;
+while ($row = db_fetch($QID))
+{
+$count++;
+?>
+    <TR CLASS="row<?=($rowcount++ % 2)?>">
+        <TD WIDTH=75><?=o($row[DATE])?></TD>
+        <TD><?=o($row[NAME])?></TD>
+        <TD><?=o($row[OFFER])?></TD>
+        <TD><A HREF="http://whois.sc/<?=o($row[IP])?>"><?=o($row[IP])?></A></TD>
+        <TD><?=o($row[REFERER])?></TD>
+        <TD><?=o($row[USERAGENT])?></TD>
+    </TR>
+<?php } ?>
+    <TR>
+        <TH COLSPAN=6><HR><?=$count?> rows</TH>
+    </TR>
+</TABLE>
+    
