@@ -2,7 +2,7 @@
     <TR><TH COLSPAN=2>Free Bet Offers</TH></TR>
 <?php
 $count = 0;
-$CAT_LEFTSIDE_QID = cat_list_offers("total desc,count", 1);
+$CAT_LEFTSIDE_QID = cat_list_offers("count desc,total", 1);
 while ($row = db_fetch($CAT_LEFTSIDE_QID))
 {
     if ($row[COUNT]==0)
