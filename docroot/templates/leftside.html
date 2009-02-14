@@ -1,8 +1,8 @@
 <table WIDTH=180 border="1" cellspacing="1" cellpadding="4" bordercolor="#CCCCCC">
-    <TR><TH COLSPAN=2>Free Bet Offers</TH></TR>
+    <TR><TH COLSPAN=2>Free Bet Categories</TH></TR>
 <?php
 $count = 0;
-$CAT_LEFTSIDE_QID = cat_list_offers("count desc,total", 1);
+$CAT_LEFTSIDE_QID = cat_list_offers("count", 1);
 while ($row = db_fetch($CAT_LEFTSIDE_QID))
 {
     if ($row[COUNT]==0)

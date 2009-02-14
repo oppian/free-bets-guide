@@ -1,7 +1,7 @@
 <?php
 
 // urls and dirs
-define("HOME_DIR", "/www/www.free-bets-guide.com/docroot/");
+define("HOME_DIR", "/www/free-bets-guide/docroot/");
 define("HOME_URL", "/");
 define("TEMPLATE_DIR", HOME_DIR."templates/");
 define("INCLUDE_DIR", HOME_DIR."include");
