@@ -1,6 +1,6 @@
+<VirtualHost *:80>
 DocumentRoot /deploy/docroot
 ServerName www.free-bets-guide.com
-
 
 RewriteEngine on
 RewriteLogLevel 0
@@ -44,4 +44,4 @@ RewriteRule articles/(.*)/ /art.php?t=$1
 # into /sites.php?c=category-name
 RewriteRule sites/ /sites.php
 RewriteRule sites/(.*)/ /sites.php?c=$1
-
+</VirtualHost>
