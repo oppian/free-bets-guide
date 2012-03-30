@@ -5,13 +5,10 @@ class free-bets-guide {
       content => template('free-bets-guide/config.php.erb'),
   }
 
-  file {'/etc/httpd/conf.d/free-bets-guide.conf':
-      content => template('free-bets-guide/free-bets-guide.conf.erb'),
-      notify => Service['httpd'],
-  }
-
   class {"php":}
 
-  class {"apache":}
+  apache::dotconf { "free-bets-guide":
+    content => template("free-bets-guide/free-bets-guide.conf.erb")
+  }
 
 }
