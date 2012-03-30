@@ -2,6 +2,13 @@
 DocumentRoot /deploy/docroot
 ServerName www.free-bets-guide.com
 
+<Directory /deploy/docroot>
+    Options All
+    AllowOverride All
+    Order allow,deny
+    Allow from all
+</Directory>
+
 RewriteEngine on
 RewriteLogLevel 0
 
