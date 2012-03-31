@@ -6,7 +6,7 @@ class free-bets-guide {
   }
 
   class {"php":}
-
+  
   apache::dotconf { "free-bets-guide":
     content => template("free-bets-guide/free-bets-guide.conf.erb")
   }
