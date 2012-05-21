@@ -1,1 +1,5 @@
-Welcome to the Free Bets Guide code base
+free-bets-guide
+===============
+
+Welcome to the Free Bets Guide code base. This is an old PHP application that was a
+database to track free bets from various bookmakers and have affiliate links to them.
